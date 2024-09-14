@@ -16,12 +16,12 @@ typedef int (*operation_t)(int, int);
 
 int main()
 {
-    operation_t opes[2];
-    opes[0] = add;
-    opes[1] = sub;
+    operation_t ops[2];
+    ops[0] = add;
+    ops[1] = sub;
     for (size_t i = 0; i < 10; i++)
     {
-        printf("%d\n", opes[i % 2](0, i));
+        printf("%d\n", ops[i % 2](0, i));
     }
     return 0;
 }

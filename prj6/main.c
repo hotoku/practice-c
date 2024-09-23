@@ -12,6 +12,9 @@ int sub(int a, int b)
     return a - b;
 }
 
+/**
+ * intを2つ受け取り、intを返す関数ポインタの型
+ */
 typedef int (*operation_t)(int, int);
 
 int main()

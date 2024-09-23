@@ -11,11 +11,12 @@
 
 /**
  * バリデータのインターフェース。
- * 判断基準のパラメータとしてvoid*のdataを持つ。
+ * 判断基準のパラメータとしてvoid*のdataを持つ。これが、いわゆるインスタンス変数に相当する。
  * また、判断を実行するメソッドとしてvalidateを持つ。
  * validateが、チェック対象の値valの他に、selfを引数に持っている。
  * これによって、validate内でdataを参照できる。
  * ただ、void*を使っているので、dataの型はvalidate内でキャストする必要があり、コンパイル時の型チェックができない。
+ * また、この実装方法だと、インスタンス変数は、1つのvoid*で指せるようにまとめないといけない。
  */
 typedef struct Validator {
   bool (*validate)(struct Validator *self, int val);

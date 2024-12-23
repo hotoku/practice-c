@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" ,="" href="/template/markdown-github.css">
+        <link rel="stylesheet" ,="" href="/template/custom.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+        <script>
+         document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+                        ':35729/livereload.js?snipver=1"></' + 'script>')
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.js"></script>
+
+        <script src="/template/load-mathjax.js" async=""></script>
+    </head>
+    <body>
+        <h1 id="futsu-no-linux">futsu-no-linux</h1>
+<h2 id="入出力関係をまとめる">入出力関係をまとめる</h2>
+<h2 id="システムコール">システムコール</h2>
+<h3 id="read"><code>read</code></h3>
+<p><code>ssize_t read(int fd, void *buf, size_t bufsize)</code></p>
+<p><strong>返り値</strong>：読み込んだ文字数 or 終端に達していたら 0 or エラーが起きたら-1。</p>
+<p>読み込んだバイトをそのまま buf にコピーするだけで、0 終端はしないので注意。</p>
+<h3 id="write"><code>write</code></h3>
+<p><code>ssize_t write(int fd, const void *buf, size_t bufsize)</code></p>
+<p><strong>返り値</strong>：書き込んだ文字数 or エラーが起きたら-1。</p>
+<h3 id="open"><code>open</code></h3>
+<ul>
+<li><code>int open(const char* path, int flags)</code></li>
+<li><code>int open(const char* path, int flags, mode_t mode)</code></li>
+</ul>
+<p><strong>返り値</strong>：ファイルディスクリプタ or エラーが起きたら-1。</p>
+<p><strong>引数</strong>：</p>
+<ul>
+<li><code>flags</code> 読み込み専用か、とか、ファイルが存在しないときにどうするか、とか。詳細は使うときに調べる</li>
+<li><code>mode</code> 作成する場合のファイルのパーミッション。umask が絡んでくるので注意。</li>
+</ul>
+
+    
+
+</body></html>

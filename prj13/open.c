@@ -19,12 +19,11 @@ int main() {
   if (write(fd, "Hello, world!\n", 14) < 0) goto panic;
   close(fd);
 
-  fd = open(path, O_RDONLY);
-  if (fd < 0) goto panic;
+  if ((fd = open(path, O_RDONLY)) < 0) goto panic;
 
   char buf[1024];
-  ssize_t ret = read(fd, buf, sizeof buf - 1);
-  if (ret < 0) goto panic;
+  ssize_t ret;
+  if ((ret = read(fd, buf, sizeof buf - 1)) < 0) goto panic;
   buf[ret] = '\0';
   printf("buf=%s\n", buf);
 

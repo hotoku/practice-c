@@ -1,3 +1,6 @@
 {
-  "C_Cpp.clang_format_style": "{BasedOnStyle: Google}"
+  "C_Cpp.clang_format_style": "{BasedOnStyle: Google}",
+  "files.associations": {
+    "errno.h": "c"
+  }
 }

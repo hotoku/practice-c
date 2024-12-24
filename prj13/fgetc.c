@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-  char c;
+  int c;
   while ((c = fgetc(stdin)) != EOF) {
     fputc(c, stdout);
   }

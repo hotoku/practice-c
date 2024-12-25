@@ -51,3 +51,17 @@
 - `stderr`
 
 という`FILE*`型の変数が使える。
+
+### `fgetc`
+
+`int fgetc(FILE *stream)`
+
+**返り値**：読み込んだ文字。char じゃなくて int なのは、ストリームの終わり or エラーの場合は EOF が返るから。
+
+### `fputc`
+
+`int fputc(int c, FILE *stream)`
+
+**返り値**：書き込んだ文字。エラーの場合は EOF。char じゃなくて int なのは、fgetc の返り値をそのまま使えるように。
+
+### `fopen`, `fclose`

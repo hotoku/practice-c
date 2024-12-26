@@ -64,4 +64,28 @@
 
 **返り値**：書き込んだ文字。エラーの場合は EOF。char じゃなくて int なのは、fgetc の返り値をそのまま使えるように。
 
-### `fopen`, `fclose`
+### `fopen`
+
+- `FILE *fopen(const char *path, const char *mode)`
+
+`mode`は、`"r"`, `"w"`, `"a"`とか。他にもあるが、細かいことは使うときに調べる。
+
+**返り値**: 成功したら`FILE*`ポインタ。失敗したら NULL。
+
+### `fclose`
+
+- `int fclose(FILE *stream)`
+
+**返り値**: 失敗したら EOF。成功したときは、気にしなくてよいだろう。
+
+### `getc` `putc` `getchar` `putchar`
+
+`getc`, `putc`は略。`fgetc`, `fputc`を使っとけばよい。`getchar`, `putchar`は、入出力の相手を標準入出力に固定したもの。
+
+### `ungetc`
+
+`int ungetc(int c, FILE *stream)`
+
+`c`をストリームに戻す。ただし、1 文字しか戻せない。
+
+**返り値**: 成功したら`c`。失敗したら EOF。
